@@ -1,4 +1,5 @@
-import numpy, sys
+from numpy import array, real, imag, exp, linspace, absolute
+from sys import argv
 import matplotlib.pyplot as plt
 
 def isInt(x):
@@ -8,8 +9,8 @@ def isInt(x):
         return False
     return True
 
-if "--typeInSet" in sys.argv:
-    rawInput = list(sys.argv[sys.argv.index("--typeInSet") + 1])
+if "--typeInSet" in argv:
+    rawInput = list(argv[argv.index("--typeInSet") + 1])
     #The following is used to parse command-line input
     # to be more accepting of different ways of conveying
     # a list of ints:
@@ -21,8 +22,8 @@ if "--typeInSet" in sys.argv:
 else:
     set_selected = [0,1,0,1]
         
-if "--imgFileName" in sys.argv:
-    filename = sys.argv[sys.argv.index("--imgFileName") + 1]
+if "--imgFileName" in argv:
+    filename = argv[argv.index("--imgFileName") + 1]
 else:
     filename = "plot_out.png"
 
